@@ -33,7 +33,7 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         interaction.followUp({ embeds: [new MessageEmbed({ color: "DARK_RED", description: "Your run has been submitted successfully ✅\n You will receive a private message with the decision of approval/denial." })] });
-        client.channels.cache.get("1093854106969452594").send({
+        client.channels.cache.get(global.config.channels.submits).send({
             content: interaction.options.getString("link"),
             embeds: [
                 new MessageEmbed({

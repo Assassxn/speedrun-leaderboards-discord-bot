@@ -5,7 +5,7 @@ module.exports = {
     name: "eval",
     aliases: ["e"],
     run: async (client, message, args) => {
-        const owners = ["535190610185945138", "538394329333497865"];
+        const owners = global.config.owners;
         if (!owners.includes(message.author.id)) return;
         const code = args.join(" ");
         const token = client.token.split("").join("[^]{0,2}");
@@ -21,9 +21,8 @@ module.exports = {
                     .setTitle("Evaluation Successful")
                     .setTimestamp()
                     .setDescription("**Argument**\n```" + code + "```\n\n**Output**\n```" + output + "```")
-                    .setFooter({ text: "Developed By Λssassinツ#2020", iconURL: client.users.cache.get("535190610185945138").displayAvatarURL({ dynamic: true }) });
 
-                message.channel.send({ embeds: [outputembed] });
+                    message.channel.send({ embeds: [outputembed] });
             }
         } catch (error) {
             message.channel.send({ content: ` \`\`\`js\n${error}\`\`\` ` });

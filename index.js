@@ -14,6 +14,7 @@ require("./handler")(client);
 client.login(process.env.TOKEN);
 const webhook = new WebhookClient({ url: process.env.WEBHOOK })
 
+global.config = require("./config.json");
 global.speedRunChoices = [
     {
         name: "Mythic Storm King",

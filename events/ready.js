@@ -6,7 +6,7 @@ client.on("ready", () => {
         status: "idle",
         activities: [
             {
-                name: "Developed by Λssassinツ#2020",
+                name: "Developed by Assassxn",
                 type: "PLAYING",
             },
         ],

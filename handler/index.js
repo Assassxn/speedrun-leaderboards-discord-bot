@@ -33,7 +33,7 @@ module.exports = async (client) => {
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);
     });
-    client.on("ready", async () => await client.guilds.cache.get("1078294577846431787").commands.set(arrayOfSlashCommands));
+    client.on("ready", async () => await client.guilds.cache.get(global.config.guilds.main).commands.set(arrayOfSlashCommands));
 
     mongoose.connect(process.env.MONGO).then(() => console.log("Connected to mongodb"));
     mongoose.set("strictQuery", false);
